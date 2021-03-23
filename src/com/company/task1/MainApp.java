@@ -7,29 +7,29 @@ public class MainApp {
         average(array);                            //1
         min(array);                                //2
         firstEven(array);                          //3
-        byteConverter(10, "kb");         //4
+        System.out.println(byteConverter(10, "kb"));         //4
         System.out.println(isSorted(array));        //5
         System.out.println(isPrime(101));     //6
         sumDigits(521);                       //7
         sumDigitsSecond(10221);               //7
-        showTime(3640);                    //8
+        showTime(765);                    //8
         replaceNegative(multiArray);               //9
         sqRoots(2, 8, 3);                //10
 
 
     }
 
-    private static void average(int[] array) { //1.метод возвращающий среднее значение чисел массива
+    private static double average(int[] array) { //1.метод возвращающий среднее значение чисел массива
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
             sum += array[i];
 
         }
-        System.out.println(sum / array.length);
+        return sum / array.length;
 
     }
 
-    private static void min(int[] array) { //2.метод возвращающий минимальный элемент массива
+    private static int min(int[] array) { //2.метод возвращающий минимальный элемент массива
         int min = array[0];
         for (int i = 0; i < array.length; i++) {
 
@@ -37,10 +37,10 @@ public class MainApp {
                 min = array[i];
             }
         }
-        System.out.println(min);
+        return min;
     }
 
-    private static void firstEven(int[] array) { //3. метод возвращающий из множества чисел первое четное
+    private static int firstEven(int... array) { //3. метод возвращающий из множества чисел первое четное
         int even = array[0];
         for (int i = 0; i < array.length; i++) {
 
@@ -49,24 +49,20 @@ public class MainApp {
                 break;
             }
         }
-        System.out.println(even);
+        return even;
     }
 
-    private static void byteConverter(long size, String type) { //4. метод ковертирующий мб в кбайты, или байты
+    private static long byteConverter(long size, String type) { //4. метод ковертирующий мб в кбайты, или байты
         long kb = size * 1024;
         if (size > 0 && size < 1000000) {
             switch (type) {
                 case "kb":
-                    System.out.println(kb + " кБайт");
-                    break;
+                    return kb ;
                 case "b":
-                    System.out.println(kb * 1024 + " Байт");
-                    break;
+                    return kb * 1024 ;
             }
-        } else {
-            System.out.println("Ошибка: введен неверный диапазон");
         }
-
+           return 0;
     }
 
     private static boolean isSorted(int[] array) { //5. метод проверки сортировки массива по возрастанию??
@@ -87,17 +83,17 @@ public class MainApp {
         return true;
     }
 
-    private static void sumDigits(int num) { //7 Метод выводящий сумму цифр натурального числа
+    private static int sumDigits(int num) { //7 Метод выводящий сумму цифр натурального числа
         int sum = 0;
         while (num != 0) {
             sum = sum + (num % 10);
             num = num / 10;
 
         }
-        System.out.println(sum);
+        return sum;
     }
 
-    private static void sumDigitsSecond(int num) { //7 Метод выводящий сумму цифр натурального числа
+    private static int sumDigitsSecond(int num) { //7 Метод выводящий сумму цифр натурального числа
         String string = String.valueOf(num);
         char[] array = string.toCharArray();
         int sum = 0;
@@ -105,7 +101,7 @@ public class MainApp {
             sum += Integer.parseInt(String.valueOf(array[i]));
 
         }
-        System.out.println(sum);
+        return sum;
     }
 
     private static void showTime(int seconds) { //8 Метод конвертирующий секунды в HH:MM:SS
@@ -127,13 +123,11 @@ public class MainApp {
         } else {
             System.out.println(sec);
         }
-
-
     }
 
     private static void replaceNegative(int[][] multiArray) { //9. Метод заменяющий отрицательные значения в матрице на 0
-        for (int i = 0; i < multiArray.length; i++) {
-            for (int j = 0; j < multiArray[i].length; j++) {
+        for (int i = 0; i < multiArray.length && i <20; i++) {
+            for (int j = 0; j < multiArray[i].length && j <20; j++) {
                 if (multiArray[i][j] < 0) {
                     multiArray[i][j] = 0;
                 }
@@ -152,10 +146,10 @@ public class MainApp {
         } else if (d == 0) {
             System.out.println("Уравнение имеет один корень x: " + x1);
 
-        } else {
-            System.out.println("Корней в уравнение нет");
-
         }
+            System.out.println("Корней в уравнении нет");
+
+
     }
 
 
