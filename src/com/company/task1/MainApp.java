@@ -3,15 +3,18 @@ package com.company.task1;
 public class MainApp {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6};
+        int[][] multiArray = {{-1, 2, 3}, {4, -3, 8}, {6, -7, 8, 4}};
         average(array);                       //1
         min(array);                           //2
         firstEven(array);                     //3
         byteConverter(10, "kb");     //4
         System.out.println(isSorted(array));  //5
         System.out.println(isPrime(101)); //6
-
-        sumDigits(10221);//7
-        sqRoots(2,4,3); //10
+        sumDigits(521);//7
+        sumDigitsSecond(10221);//7
+        showTime(3640);//8
+        replaceNegative(multiArray);//9
+        sqRoots(2, 8, 3); //10
 
 
     }
@@ -85,6 +88,16 @@ public class MainApp {
     }
 
     private static void sumDigits(int num) { //7
+        int sum = 0;
+        while (num != 0) {
+            sum = sum + (num % 10);
+            num = num / 10;
+
+        }
+        System.out.println(sum);
+    }
+
+    private static void sumDigitsSecond(int num) { //7
         String string = String.valueOf(num);
         char[] array = string.toCharArray();
         int sum = 0;
@@ -95,16 +108,51 @@ public class MainApp {
         System.out.println(sum);
     }
 
+    private static void showTime(int seconds) { //8
+        int hour = seconds / 3600;
+        if (hour < 10) {
+            System.out.print("0" + hour + ":");
+        } else {
+            System.out.print(hour + ":");
+        }
+        int minute = (seconds - hour * 3600) / 60;
+        if (minute < 10) {
+            System.out.print("0" + minute + ":");
+        } else {
+            System.out.print(minute + ":");
+        }
+        int sec = seconds - hour * 3600 - minute * 60;
+        if (sec < 10) {
+            System.out.println("0" + sec);
+        } else {
+            System.out.println(sec);
+        }
+
+
+    }
+
+    private static void replaceNegative(int[][] multiArray) { //9
+        for (int i = 0; i < multiArray.length; i++) {
+            for (int j = 0; j < multiArray[i].length; j++) {
+                if (multiArray[i][j] < 0) {
+                    multiArray[i][j] = 0;
+                }
+                System.out.print(multiArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
     private static void sqRoots(double a, double b, double c) { //10. Метод для нахождения корней квадратного уравнения
         double d = b * b - 4 * a * c;
         double x1 = (-b + Math.sqrt(d)) / (2 * a);
         double x2 = (-b - Math.sqrt(d)) / (2 * a);
         if (d > 0) {
-            System.out.println("Уравнение имеет два корня x1: " + x1 + "x2: " + x2);
-        }else if(d == 0) {
+            System.out.println("Уравнение имеет два корня x1: " + x1 + "  x2: " + x2);
+        } else if (d == 0) {
             System.out.println("Уравнение имеет один корень x: " + x1);
 
-        } else  {
+        } else {
             System.out.println("Корней в уравнение нет");
 
         }
