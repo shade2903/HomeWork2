@@ -4,17 +4,17 @@ public class MainApp {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6};
         int[][] multiArray = {{-1, 2, 3}, {4, -3, 8}, {6, -7, 8, 4}};
-        average(array);                       //1
-        min(array);                           //2
-        firstEven(array);                     //3
-        byteConverter(10, "kb");     //4
-        System.out.println(isSorted(array));  //5
-        System.out.println(isPrime(101)); //6
-        sumDigits(521);//7
-        sumDigitsSecond(10221);//7
-        showTime(3640);//8
-        replaceNegative(multiArray);//9
-        sqRoots(2, 8, 3); //10
+        average(array);                            //1
+        min(array);                                //2
+        firstEven(array);                          //3
+        byteConverter(10, "kb");         //4
+        System.out.println(isSorted(array));        //5
+        System.out.println(isPrime(101));     //6
+        sumDigits(521);                       //7
+        sumDigitsSecond(10221);               //7
+        showTime(3640);                    //8
+        replaceNegative(multiArray);               //9
+        sqRoots(2, 8, 3);                //10
 
 
     }
@@ -87,7 +87,7 @@ public class MainApp {
         return true;
     }
 
-    private static void sumDigits(int num) { //7
+    private static void sumDigits(int num) { //7 Метод выводящий сумму цифр натурального числа
         int sum = 0;
         while (num != 0) {
             sum = sum + (num % 10);
@@ -97,7 +97,7 @@ public class MainApp {
         System.out.println(sum);
     }
 
-    private static void sumDigitsSecond(int num) { //7
+    private static void sumDigitsSecond(int num) { //7 Метод выводящий сумму цифр натурального числа
         String string = String.valueOf(num);
         char[] array = string.toCharArray();
         int sum = 0;
@@ -108,7 +108,7 @@ public class MainApp {
         System.out.println(sum);
     }
 
-    private static void showTime(int seconds) { //8
+    private static void showTime(int seconds) { //8 Метод конвертирующий секунды в HH:MM:SS
         int hour = seconds / 3600;
         if (hour < 10) {
             System.out.print("0" + hour + ":");
@@ -131,7 +131,7 @@ public class MainApp {
 
     }
 
-    private static void replaceNegative(int[][] multiArray) { //9
+    private static void replaceNegative(int[][] multiArray) { //9. Метод заменяющий отрицательные значения в матрице на 0
         for (int i = 0; i < multiArray.length; i++) {
             for (int j = 0; j < multiArray[i].length; j++) {
                 if (multiArray[i][j] < 0) {
