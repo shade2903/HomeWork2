@@ -2,19 +2,19 @@ package com.company.task1;
 
 public class MainApp {
     public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5, 6};
+        int[] array = {1, 2, 3, 4, 5, 6, 7,8};
         int[][] multiArray = {{-1, 2, 3}, {4, -3, 8}, {6, -7, 8, 4}};
-        System.out.println(average(array));                            //1
-        System.out.println(min(array));                                //2
-        System.out.println(firstEven(5,3,0,7,4,1,11));          //3
-        System.out.println(byteConverter(10, "kb"));         //4
-        System.out.println(isSorted(array));                          //5
-        System.out.println(isPrime(101));                        //6
-        System.out.println(sumDigits(123));                       //7
-        System.out.println(sumDigits(123));                       //7
-        showTime(765);                                         //8
-        replaceNegative(multiArray);                                   //9
-        sqRoots(2, 8, 3);                                    //10
+//        System.out.println(average(array));                      //1
+//        System.out.println(min(array));                         //2
+//        System.out.println(firstEven(5,3,0,7,4,1,11));          //3
+//        System.out.println(byteConverter(10, "kb"));            //4
+//        System.out.println(isSorted(array));                    //5
+//        System.out.println(isPrime(401));                       //6
+//        System.out.println(sumDigits(123));                     //7
+//        System.out.println(sumDigitsSecond(123));               //7
+//        showTime(765);                                          //8
+//        replaceNegative(multiArray);                            //9
+//        sqRoots(2, 8, 3);                                       //10
 
 
     }
@@ -60,12 +60,12 @@ public class MainApp {
         if (size > 0 && size < 1000000) {
             switch (type) {
                 case "kb":
-                    return kb ;
+                    return kb;
                 case "b":
-                    return kb * 1024 ;
+                    return kb * 1024;
             }
         }
-           return 0;
+        return 0;
     }
 
     private static boolean isSorted(int[] array) { //5. метод проверки сортировки массива по возрастанию??
@@ -129,8 +129,8 @@ public class MainApp {
     }
 
     private static void replaceNegative(int[][] multiArray) { //9. Метод заменяющий отрицательные значения в матрице на 0
-        for (int i = 0; i < multiArray.length && i <20; i++) {
-            for (int j = 0; j < multiArray[i].length && j <20; j++) {
+        for (int i = 0; i < multiArray.length && i < 20; i++) {
+            for (int j = 0; j < multiArray[i].length && j < 20; j++) {
                 if (multiArray[i][j] < 0) {
                     multiArray[i][j] = 0;
                 }
