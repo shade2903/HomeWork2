@@ -4,17 +4,17 @@ public class MainApp {
     public static void main(String[] args) {
         int[] array = {1, 2, 3, 4, 5, 6};
         int[][] multiArray = {{-1, 2, 3}, {4, -3, 8}, {6, -7, 8, 4}};
-        average(array);                            //1
-        min(array);                                //2
-        firstEven(array);                          //3
+        System.out.println(average(array));                            //1
+        System.out.println(min(array));                                //2
+        System.out.println(firstEven(5,3,0,7,4,1,11));          //3
         System.out.println(byteConverter(10, "kb"));         //4
-        System.out.println(isSorted(array));        //5
-        System.out.println(isPrime(101));     //6
-        sumDigits(521);                       //7
-        sumDigitsSecond(10221);               //7
-        showTime(765);                    //8
-        replaceNegative(multiArray);               //9
-        sqRoots(2, 8, 3);                //10
+        System.out.println(isSorted(array));                          //5
+        System.out.println(isPrime(101));                        //6
+        System.out.println(sumDigits(123));                       //7
+        System.out.println(sumDigits(123));                       //7
+        showTime(765);                                         //8
+        replaceNegative(multiArray);                                   //9
+        sqRoots(2, 8, 3);                                    //10
 
 
     }
@@ -35,6 +35,7 @@ public class MainApp {
 
             if (array[i] < array[0]) {
                 min = array[i];
+
             }
         }
         return min;
@@ -46,10 +47,12 @@ public class MainApp {
 
             if (array[i] % 2 == 0) {
                 even = array[i];
-                break;
+
+                return even;
             }
         }
-        return even;
+        return -1;
+
     }
 
     private static long byteConverter(long size, String type) { //4. метод ковертирующий мб в кбайты, или байты
@@ -146,8 +149,9 @@ public class MainApp {
         } else if (d == 0) {
             System.out.println("Уравнение имеет один корень x: " + x1);
 
-        }
+        } else {
             System.out.println("Корней в уравнении нет");
+        }
 
 
     }
